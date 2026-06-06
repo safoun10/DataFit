@@ -2,8 +2,6 @@
 
 A single-page fitness calculator suite with a dark, terminal-inspired aesthetic. Ten performance calculators - BMI, BMR, TDEE, IBW, body fat %, FFMI, BFMI, lean mass, protein, and maximum muscular potential - all in one scrollable interface with live results.
 
-**Priority:** aesthetics → responsiveness → functionality → formula depth.
-
 ## Quick Start
 
 **Live site:** https://datafit-iota.vercel.app
@@ -20,12 +18,12 @@ All calculations run in your browser. Use the new PROFILE section (first module)
 
 ## Documentation
 
-| Document                                 | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| [docs/SITE.md](docs/SITE.md)             | What's on the site - modules, design, UX |
-| [docs/PLAN.md](docs/PLAN.md)             | Architecture and development plan        |
-| [docs/USER_GUIDE.md](docs/USER_GUIDE.md) | End-user guide for every calculator      |
-| [docs/FORMULAS.md](docs/FORMULAS.md)     | Scientific formula reference             |
+| Document                              | Description                              |
+| --------------------------------------| ---------------------------------------- |
+| [SITE Docs](docs/SITE.md)             | What's on the site - modules, design, UX |
+| [SITE PLAN](docs/PLAN.md)             | Architecture and development plan        |
+| [USER GUIDE](docs/USER_GUIDE.md)      | End-user guide for every calculator      |
+| [FORMULAS](docs/FORMULAS.md)          | Scientific formula reference             |
 
 ## Tech Stack
 
@@ -63,11 +61,6 @@ DataFit/
 | 09  | Protein       | Daily protein target by goal                             |
 | 10  | Max Potential | Casey Butt / Berkhan muscular ceiling                    |
 
-## Customization
-
-- **safoun\_:** Edit the footer in `index.html`
-- **Unit default:** Stored in `localStorage` key `datafit_unit_mode`
-
 ## Live Site
 
 🚀 **Visit:** https://datafit-iota.vercel.app
@@ -78,7 +71,7 @@ All outputs are estimates for informational and educational purposes. They are n
 
 ## Author
 
-Built by **[safoun_]**
+Built by **[safoun_](https://www.linkedin.com/in/safoun10/)**
 
 ## License
 
