@@ -167,14 +167,14 @@ function showUnitNotification() {
   const newUnit = isMetric() ? 'METRIC' : 'IMPERIAL';
   const text = document.getElementById('notification-text');
   text.textContent = `Switched to ${newUnit}. Please verify your input values - they have been converted.`;
-  
+
   // Clear any existing timeouts
   if (notificationTimeouts.hide) clearTimeout(notificationTimeouts.hide);
   if (notificationTimeouts.fadeOut) clearTimeout(notificationTimeouts.fadeOut);
-  
+
   notification.style.display = 'block';
   notification.classList.remove('fade-out');
-  
+
   notificationTimeouts.fadeOut = setTimeout(() => {
     notification.classList.add('fade-out');
     notificationTimeouts.hide = setTimeout(() => {
