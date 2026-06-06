@@ -2,6 +2,8 @@
 
 Scientific equations used by each calculator module. All internal calculations use **metric units** (kg, cm, m).
 
+**Live site:** https://datafit-iota.vercel.app
+
 ---
 
 ## BMI - Body Mass Index

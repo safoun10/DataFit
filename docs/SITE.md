@@ -2,6 +2,8 @@
 
 This document describes everything on the DataFit single-page site: brand identity, visual design, navigation, modules, and shared behavior.
 
+**Live site:** https://datafit-iota.vercel.app
+
 ## Brand & Aesthetic
 
 DataFit presents fitness data through a **dark, terminal-inspired interface** - inspired by high-performance athletic dashboards and cyberpunk minimalism.
@@ -127,6 +129,9 @@ The `(i)` button in the footer opens a disclaimer modal: local-only processing, 
 ## Browser Support
 
 Tested targets: Chrome, Firefox, Safari, Edge (current versions). Requires ES module support.
+
+**Live site:** https://datafit-iota.vercel.app
+
 
 ## Screenshots
 

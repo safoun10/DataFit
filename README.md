@@ -6,7 +6,9 @@ A single-page fitness calculator suite with a dark, terminal-inspired aesthetic.
 
 ## Quick Start
 
-No build step required. Open the site locally:
+**Live site:** https://datafit-iota.vercel.app
+
+Or run locally (no build step required):
 
 1. Clone or download this folder
 2. Open [`index.html`](index.html) in any modern browser
@@ -14,7 +16,7 @@ No build step required. Open the site locally:
 3. Scroll through modules or use the dot navigation on the right
 4. Toggle **METRIC | IMPERIAL** in the footer status bar
 
-All calculations run in your browser. Use the new PROFILE section (first module) to enter height, weight, age, sex and activity level once — all calculators update instantly. Profile inputs and last session values (BMR/TDEE) are saved to `localStorage` so data persists after refresh. Nothing is sent to a server.
+All calculations run in your browser. Use the new PROFILE section (first module) to enter height, weight, age, sex and activity level once - all calculators update instantly. Profile inputs and last session values (BMR/TDEE) are saved to `localStorage` so data persists after refresh. Nothing is sent to a server.
 
 ## Documentation
 
@@ -63,8 +65,12 @@ DataFit/
 
 ## Customization
 
-- **safoun\_:** Edit the footer in `index.html` - replace `OPERATOR: [safoun_]` with safoun\_
+- **safoun\_:** Edit the footer in `index.html`
 - **Unit default:** Stored in `localStorage` key `datafit_unit_mode`
+
+## Live Site
+
+🚀 **Visit:** https://datafit-iota.vercel.app
 
 ## Disclaimer
 
@@ -72,8 +78,9 @@ All outputs are estimates for informational and educational purposes. They are n
 
 ## Author
 
-Built by **[safoun_]** - replace the placeholder in the footer and this line when publishing.
+Built by **[safoun_]**
 
 ## License
 
 MIT - use freely, attribution appreciated.
+

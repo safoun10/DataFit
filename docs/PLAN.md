@@ -2,6 +2,8 @@
 
 Living architecture document for the DataFit fitness calculator suite.
 
+**Live site:** https://datafit-iota.vercel.app
+
 ## Goals
 
 1. **Aesthetics first** - match the reference hero: dark grid, neon green, terminal typography
@@ -160,8 +162,10 @@ Each calculator exports `computeXXX(section)`:
 
 ## Deployment
 
-Static hosting - no server required:
+Live site:
+- **https://datafit-iota.vercel.app** - Production deployment
 
+Local deployment options:
 - **GitHub Pages:** push repo, enable Pages on `main`
 - **Netlify / Vercel:** drag folder or connect repo
 - **Local:** open `index.html` directly (ES modules work on `file://` in most browsers; `serve` recommended)

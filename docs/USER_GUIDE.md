@@ -2,6 +2,8 @@
 
 How to use every calculator on the DataFit site. All results are **estimates** - not medical advice.
 
+**Live site:** https://datafit-iota.vercel.app
+
 ## Getting Started
 
 1. Open the site in your browser
