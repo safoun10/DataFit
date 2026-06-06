@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="DataFit - Performance metrics suite. 10 fitness calculators. Zero noise. Pure output.">
+  <title>DataFit - Body Data</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='90'>💪</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <nav id="dot-nav" class="dot-nav" aria-label="Section navigation"></nav>
+
+  <main class="scroll-container" id="scroll-container">
+
+    <!-- HERO -->
+    <section id="hero" class="section hero">
+      <div class="section__inner">
+        <p class="hero__brand">DATAFIT · PERFORMANCE METRICS SUITE</p>
+        <h1 class="hero__title">BODY DATA</h1>
+        <p class="hero__tagline">10 CALCULATORS. ZERO NOISE. PURE OUTPUT.</p>
+        <div class="hero__actions">
+          <button id="start-btn" class="btn-ghost" type="button">
+            START TRACKING <span class="btn-ghost__arrow" aria-hidden="true">↓</span>
+          </button>
+          <div class="hero__stats">
+            <span>10 MODULES</span>
+            <span class="hero__stats-divider" aria-hidden="true"></span>
+            <span>ABSOLUTE PRECISION</span>
+            <span class="hero__stats-divider" aria-hidden="true"></span>
+            <span>0ms LATENCY</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CENTRAL PROFILE -->
+    <section id="profile" class="section" data-module="00">
+      <div class="section__inner">
+        <p class="section__label">PROFILE · YOUR DATA</p>
+        <h2 class="section__title">PROFILE</h2>
+        <p class="section__subtitle">Enter your measurements - all calculators update instantly</p>
+        <div class="input-panel">
+          <div class="input-panel__header">// YOUR DATA</div>
+          <div class="input-grid">
+            <div class="input-group input-group--full">
+              <label>SEX</label>
+              <div class="segment-control" data-central-segment="sex">
+                <button type="button" class="segment-control__option is-active" data-value="male">Male</button>
+                <button type="button" class="segment-control__option" data-value="female">Female</button>
+              </div>
+            </div>
+            <div class="input-group height-metric">
+              <label data-unit-height>HEIGHT (CM)</label>
+              <input type="number" data-central-input="height" placeholder="175" min="100" max="250" step="1" required>
+            </div>
+            <div class="input-group height-imperial" style="display:none">
+              <label>HEIGHT (FT)</label>
+              <input type="number" data-central-input="heightFeet" placeholder="5" min="3" max="8" step="1" required>
+            </div>
+            <div class="input-group height-imperial" style="display:none">
+              <label>HEIGHT (IN)</label>
+              <input type="number" data-central-input="heightInches" placeholder="9" min="0" max="11" step="1">
+            </div>
+            <div class="input-group">
+              <label data-unit-weight>WEIGHT (KG)</label>
+              <input type="number" data-central-input="weight" placeholder="75" min="1" step="0.1" required>
+            </div>
+            <div class="input-group">
+              <label>AGE (YEARS)</label>
+              <input type="number" data-central-input="age" placeholder="30" min="15" max="120" step="1" required>
+            </div>
+            <div class="input-group">
+              <label>BODY FAT % <span style="font-size:0.55rem;opacity:0.6">(EST.)</span></label>
+              <input type="number" data-central-input="bodyFat" placeholder="15" min="2" max="60" step="0.1">
+            </div>
+            <div class="input-group input-group--full">
+              <label>ACTIVITY LEVEL</label>
+              <select data-central-select="activity"></select>
+            </div>
+
+          </div>
+          <p class="profile-hint">Updates all calculations instantly. Data saved to your browser. Body fat auto-updates
+            from Module 06.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BMI -->
+    <section id="bmi" class="section" data-module="01">
+      <div class="section__inner">
+        <p class="section__label">MODULE_01 · BMI</p>
+        <h2 class="section__title">BMI</h2>
+        <p class="section__subtitle">Body Mass Index</p>
+        <div class="input-panel">
+          <div class="input-panel__header">// INFO</div>
+          <p class="profile-hint">Height & weight from your profile. Update in the PROFILE section to recalculate.</p>
+        </div>
+        <div class="result-display">
+          <div class="result-display__value">-</div>
+          <div class="result-display__unit">BMI</div>
+          <div class="result-display__label"></div>
+          <div class="result-extras"></div>
+        </div>
+        <div class="formula-panel">
+          <button class="formula-panel__toggle" type="button" aria-expanded="false">// FORMULA <span
+              class="formula-panel__toggle-icon">▼</span></button>
+          <div class="formula-panel__content">
+            <code>BMI = weight (kg) / height (m)²</code><br>
+            Categories (WHO): &lt;18.5 Underweight · 18.5–24.9 Normal · 25–29.9 Overweight · ≥30 Obese<br>
+            BMI Prime = BMI / 25
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BMR -->
+    <section id="bmr" class="section" data-module="02">
+      <div class="section__inner">
+        <p class="section__label">MODULE_02 · BMR</p>
+        <h2 class="section__title">BMR</h2>
+        <p class="section__subtitle">Basal Metabolic Rate</p>
+        <div class="input-panel">
+          <div class="input-panel__header">// INPUTS</div>
+          <div class="input-grid">
+            <div class="input-group input-group--full">
+              <label>FORMULA</label>
+              <div class="segment-control" data-segment="formula">
+                <button type="button" class="segment-control__option is-active" data-value="mifflin">Mifflin-St
+                  Jeor</button>
+                <button type="button" class="segment-control__option" data-value="harris">Harris-Benedict</button>
+              </div>
+            </div>
+          </div>
+          <p class="profile-hint">Sex, age, height & weight from PROFILE section. Update there to recalculate.</p>
+        </div>
+        <div class="result-display">
+          <div class="result-display__value">-</div>
+          <div class="result-display__unit">KCAL/DAY</div>
+          <div class="result-display__label"></div>
+          <div class="result-extras"></div>
+        </div>
+        <div class="formula-panel">
+          <button class="formula-panel__toggle" type="button" aria-expanded="false">// FORMULA <span
+              class="formula-panel__toggle-icon">▼</span></button>
+          <div class="formula-panel__content">
+            <strong>Mifflin-St Jeor (1990):</strong><br>
+            <code>M: (10 x kg) + (6.25 x cm) − (5 x age) + 5</code><br>
+            <code>F: (10 x kg) + (6.25 x cm) − (5 x age) − 161</code><br><br>
+            <strong>Harris-Benedict (revised):</strong><br>
+            <code>M: 88.362 + (13.397 x kg) + (4.799 x cm) − (5.677 x age)</code><br>
+            <code>F: 447.593 + (9.247 x kg) + (3.098 x cm) − (4.330 x age)</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TDEE -->
+    <section id="tdee" class="section" data-module="03">
+      <div class="section__inner">
+        <p class="section__label">MODULE_03 · TDEE</p>
+        <h2 class="section__title">TDEE</h2>
+        <p class="section__subtitle">Total Daily Energy Expenditure</p>
+        <div class="input-panel">
+          <div class="input-panel__header">// SOURCE DATA</div>
+          <p class="profile-hint profile-hint--linked">BMR and Activity Level are automatically read from your PROFILE
+            section.</p>
+        </div>
+        <div class="result-display">
+          <div class="result-display__value">-</div>
+          <div class="result-display__unit">KCAL/DAY</div>
+          <div class="result-display__label"></div>
+          <div class="result-extras"></div>
+        </div>
+        <div class="formula-panel">
+          <button class="formula-panel__toggle" type="button" aria-expanded="false">// FORMULA <span
+              class="formula-panel__toggle-icon">▼</span></button>
+          <div class="formula-panel__content">
+            <code>TDEE = BMR x Activity Multiplier</code><br>
+            Multipliers: Sedentary 1.2 · Light 1.375 · Moderate 1.55 · Active 1.725 · Very Active 1.9
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- IBW -->
+    <section id="ibw" class="section" data-module="05">
+      <div class="section__inner">
+        <p class="section__label">MODULE_05 · IBW</p>
+        <h2 class="section__title">IBW</h2>
+        <p class="section__subtitle">Ideal Body Weight</p>
+        <div class="input-panel">
+          <div class="input-panel__header">// INPUTS</div>
+          <div class="input-grid">
+            <div class="input-group input-group--full">
+              <label>FORMULA</label>
+              <div class="segment-control" data-segment="formula">
+                <button type="button" class="segment-control__option is-active" data-value="devine">Devine</button>
+                <button type="button" class="segment-control__option" data-value="robinson">Robinson</button>
+                <button type="button" class="segment-control__option" data-value="miller">Miller</button>
+                <button type="button" class="segment-control__option" data-value="hamwi">Hamwi</button>
+              </div>
+            </div>
+          </div>
+          <p class="profile-hint">Height & sex from PROFILE section. Select formula above.</p>
+        </div>
+        <div class="result-display">
+          <div class="result-display__value">-</div>
+          <div class="result-display__unit">KG</div>
+          <div class="result-display__label"></div>
+          <div class="result-extras"></div>
+        </div>
+        <div class="formula-panel">
+          <button class="formula-panel__toggle" type="button" aria-expanded="false">// FORMULA <span
+              class="formula-panel__toggle-icon">▼</span></button>
+          <div class="formula-panel__content">
+            <strong>Devine (1974):</strong><br>
+            <code>M: 50 + 2.3 x (height<sub>in</sub> − 60)</code><br>
+            <code>F: 45.5 + 2.3 x (height<sub>in</sub> − 60)</code><br>
+            Result in kg. ±10% shown as healthy range.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY FAT -->
+    <section id="bodyfat" class="section" data-module="06">
+      <div class="section__inner">
+        <p class="section__label">MODULE_06 · BODY FAT</p>
+        <h2 class="section__title">BODY FAT</h2>
+        <p class="section__subtitle">US Navy Circumference Method</p>
+        <div class="input-panel">
+          <div class="input-panel__header">// INPUTS</div>
+          <div class="input-grid">
+            <div class="input-group">
+              <label>NECK (<span data-unit-length-suffix>CM</span>)</label>
+              <input type="number" data-input="neck" placeholder="38" min="1" step="0.1">
+            </div>
+            <div class="input-group">
+              <label>WAIST (<span data-unit-length-suffix>CM</span>)</label>
+              <input type="number" data-input="waist" placeholder="85" min="1" step="0.1">
+            </div>
+            <div class="input-group input-group--full" id="hip-group">
+              <label>HIP (FEMALE) (<span data-unit-length-suffix>CM</span>)</label>
+              <input type="number" data-input="hip" placeholder="95" min="1" step="0.1">
+            </div>
+          </div>
+          <p class="profile-hint">Sex & height from PROFILE section. Enter neck, waist, hip measurements.</p>
+        </div>
+        <div class="result-display">
+          <div class="result-display__value">-</div>
+          <div class="result-display__unit">BODY FAT %</div>
+          <div class="result-display__label"></div>
+          <div class="result-extras"></div>
+        </div>
+        <div class="formula-panel">
+          <button class="formula-panel__toggle" type="button" aria-expanded="false">// FORMULA <span
+              class="formula-panel__toggle-icon">▼</span></button>
+          <div class="formula-panel__content">
+            <strong>US Navy Method:</strong><br>
+            <code>M: 86.010 x log₁₀(waist − neck) − 70.041 x log₁₀(height) + 36.760</code><br>
+            <code>F: 163.205 x log₁₀(waist + hip − neck) − 97.684 x log₁₀(height) − 78.387</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FFMI -->
+    <section id="ffmi" class="section" data-module="07">
+      <div class="section__inner">
+        <p class="section__label">MODULE_07 · FFMI</p>
+        <h2 class="section__title">FFMI</h2>
+        <p class="section__subtitle">Fat-Free Mass Index</p>
+        <div class="input-panel">
+          <div class="input-panel__header">// SOURCE DATA</div>
+          <p class="profile-hint profile-hint--linked">Height, weight &amp; body fat from your PROFILE section. Body fat
+            auto-updates from Module 06.</p>
+        </div>
+        <div class="result-display">
+          <div class="result-display__value">-</div>
+          <div class="result-display__unit">FFMI</div>
+          <div class="result-display__label"></div>
+          <div class="result-extras"></div>
+        </div>
+        <div class="formula-panel">
+          <button class="formula-panel__toggle" type="button" aria-expanded="false">// FORMULA <span
+              class="formula-panel__toggle-icon">▼</span></button>
+          <div class="formula-panel__content">
+            <code>FFMI = lean mass (kg) / height (m)²</code><br>
+            <code>Normalized FFMI = FFMI + 6.1 x (1.8 − height<sub>m</sub>)</code><br>
+            Natural ceiling ~25 normalized (Berkhan).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BFMI -->
+    <section id="bfmi" class="section" data-module="08">
+      <div class="section__inner">
+        <p class="section__label">MODULE_08 · BFMI</p>
+        <h2 class="section__title">BFMI</h2>
+        <p class="section__subtitle">Body Fat Mass Index</p>
+        <div class="input-panel">
+          <div class="input-panel__header">// SOURCE DATA</div>
+          <p class="profile-hint profile-hint--linked">Sex, height, weight &amp; body fat from your PROFILE section.
+            Body fat auto-updates from Module 06.</p>
+        </div>
+        <div class="result-display">
+          <div class="result-display__value">-</div>
+          <div class="result-display__unit">BFMI</div>
+          <div class="result-display__label"></div>
+          <div class="result-extras"></div>
+        </div>
+        <div class="formula-panel">
+          <button class="formula-panel__toggle" type="button" aria-expanded="false">// FORMULA <span
+              class="formula-panel__toggle-icon">▼</span></button>
+          <div class="formula-panel__content">
+            <code>BFMI = fat mass (kg) / height (m)²</code><br>
+            Healthy range: M 2–7 · F 3–9
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEAN MASS -->
+    <section id="leanmass" class="section" data-module="09">
+      <div class="section__inner">
+        <p class="section__label">MODULE_09 · LEAN MASS</p>
+        <h2 class="section__title">LEAN MASS</h2>
+        <p class="section__subtitle">Lean Body Mass Calculator</p>
+        <div class="input-panel">
+          <div class="input-panel__header">// SOURCE DATA</div>
+          <p class="profile-hint profile-hint--linked">Weight &amp; body fat from your PROFILE section. Body fat
+            auto-updates from Module 06.</p>
+        </div>
+        <div class="result-display">
+          <div class="result-display__value">-</div>
+          <div class="result-display__unit">LEAN BODY MASS</div>
+          <div class="result-display__label"></div>
+          <div class="result-extras"></div>
+        </div>
+        <div class="formula-panel">
+          <button class="formula-panel__toggle" type="button" aria-expanded="false">// FORMULA <span
+              class="formula-panel__toggle-icon">▼</span></button>
+          <div class="formula-panel__content">
+            <code>LBM = weight x (1 − body fat % / 100)</code><br>
+            <code>Fat Mass = weight − LBM</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROTEIN -->
+    <section id="protein" class="section" data-module="10">
+      <div class="section__inner">
+        <p class="section__label">MODULE_10 · PROTEIN</p>
+        <h2 class="section__title">PROTEIN</h2>
+        <p class="section__subtitle">Daily Protein Target</p>
+        <div class="input-panel">
+          <div class="input-panel__header">// INPUTS</div>
+          <div class="input-grid">
+            <div class="input-group input-group--full">
+              <label>GOAL</label>
+              <div class="segment-control" data-segment="goal">
+                <button type="button" class="segment-control__option" data-value="cut">Cut</button>
+                <button type="button" class="segment-control__option is-active" data-value="maintain">Maintain</button>
+                <button type="button" class="segment-control__option" data-value="bulk">Bulk</button>
+              </div>
+            </div>
+          </div>
+          <p class="profile-hint">Weight &amp; activity level read from PROFILE. All three goals shown below.</p>
+        </div>
+        <div class="result-display">
+          <div class="result-display__value">-</div>
+          <div class="result-display__unit">G PROTEIN / DAY</div>
+          <div class="result-display__label"></div>
+          <div class="result-extras"></div>
+        </div>
+        <div class="formula-panel">
+          <button class="formula-panel__toggle" type="button" aria-expanded="false">// FORMULA <span
+              class="formula-panel__toggle-icon">▼</span></button>
+          <div class="formula-panel__content">
+            Range based on goal and activity level (g/kg body weight).<br>
+            Cut: 1.6–2.8 g/kg · Maintain: 0.8–1.8 g/kg · Bulk: 1.6–3.0 g/kg
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- MAX POTENTIAL -->
+    <section id="maxpotential" class="section" data-module="10">
+      <div class="section__inner">
+        <p class="section__label">MODULE_10 · MAX POTENTIAL</p>
+        <h2 class="section__title">MAX POTENTIAL</h2>
+        <p class="section__subtitle">Maximum Muscular Potential</p>
+        <div class="input-panel">
+          <div class="input-panel__header">// INPUTS</div>
+          <div class="input-grid">
+            <div class="input-group">
+              <label>WRIST CIRCUMFERENCE (<span data-unit-length-suffix>CM</span>)</label>
+              <input type="number" data-input="wrist" placeholder="17" min="1" step="0.1">
+            </div>
+            <div class="input-group">
+              <label>ANKLE CIRCUMFERENCE (<span data-unit-length-suffix>CM</span>)</label>
+              <input type="number" data-input="ankle" placeholder="22" min="1" step="0.1">
+            </div>
+            <div class="input-group">
+              <label>TARGET BF %</label>
+              <input type="number" data-input="targetBF" placeholder="10" min="5" max="25" step="0.5" value="10">
+            </div>
+            <div class="input-group input-group--full">
+              <label>FORMULA</label>
+              <div class="segment-control" data-segment="formula">
+                <button type="button" class="segment-control__option is-active" data-value="casey">Casey Butt</button>
+                <button type="button" class="segment-control__option" data-value="berkhan">Berkhan (Height
+                  Only)</button>
+              </div>
+            </div>
+          </div>
+          <p class="profile-hint">Height from PROFILE. Casey Butt uses wrist + ankle bone structure for precision.</p>
+        </div>
+        <div class="result-display">
+          <div class="result-display__value">-</div>
+          <div class="result-display__unit">MAX NATURAL LEAN BODY MASS</div>
+          <div class="result-display__label"></div>
+          <div class="result-extras"></div>
+        </div>
+        <div class="formula-panel">
+          <button class="formula-panel__toggle" type="button" aria-expanded="false">// FORMULA <span
+              class="formula-panel__toggle-icon">▼</span></button>
+          <div class="formula-panel__content">
+            <strong>Casey Butt (precise):</strong> Uses height + wrist + ankle bone circumferences to estimate the
+            maximum kg of lean mass achievable naturally.<br><br>
+            <strong>Berkhan (height-only):</strong> Applies FFMI ceiling of 25 × height(m)² - gives your max natural
+            lean mass from height alone.<br><br>
+            Max body weight shown at your chosen target body fat %.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="status-bar">
+    <div class="status-bar__left">
+      <span class="status-bar__operator">OPERATOR: [safoun_]</span>
+    </div>
+    <div class="status-bar__right">
+      <button id="unit-toggle" class="unit-toggle" type="button" aria-label="Toggle unit system">
+        UNIT: <span class="unit-toggle__active">METRIC</span> | IMPERIAL
+      </button>
+      <button id="info-btn" class="status-bar__info" type="button" aria-label="About DataFit">i</button>
+    </div>
+  </footer>
+
+  <div id="unit-notification" class="unit-notification" style="display:none">
+    <span id="notification-text"></span>
+  </div>
+
+  <div id="info-modal" class="modal-overlay" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+    <div class="modal">
+      <button id="modal-close" class="modal__close" type="button" aria-label="Close">&times;</button>
+      <h3 id="modal-title" class="modal__title">DATAFIT</h3>
+      <div class="modal__body">
+        <p>Performance metrics suite - 10 fitness calculators in one terminal-style interface.</p>
+        <p>All calculations run locally in your browser. No data is sent to any server. Profile values are saved in
+          localStorage.</p>
+        <p>These are estimates for informational purposes only - not medical advice. Consult a professional for health
+          decisions.</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
